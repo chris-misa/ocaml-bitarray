@@ -26,6 +26,7 @@ val parity : t -> bool
 val find_first_set_bit : t -> int64 option
 (** [find_first_set_bit] returns the (Some [index]) of the first set bit if one exists
  * otherwise None *)
+
 val find_first_clear_bit : t -> int64 option
 val find_last_set_bit : t -> int64 option
 val find_last_clear_bit : t -> int64 option

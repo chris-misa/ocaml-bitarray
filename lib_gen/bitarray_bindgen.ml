@@ -1,4 +1,4 @@
-open Ctypes
+(*open Ctypes*)
 
 let _ =
   let fmt = Format.formatter_of_out_channel (open_out "bitarray_stubs.c") in

@@ -1,0 +1,6 @@
+(executable
+ (modes byte exe)
+ (name simple)
+ (public_name simple)
+ (libraries bitarray)
+ (modules simple))

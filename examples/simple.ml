@@ -10,7 +10,7 @@ let () =
     printf "num_bits_set should be 999: %Ld\n" (Bitarray.num_bits_set b);
 
     let ba = Bitarray.create 1_000L in
-    for i = 0 to 500_000 do
+    for _ = 0 to 500_000 do
         Bitarray.set_bit ba 5L;
     done;
     printf "5 %b\n" (Bitarray.get_bit ba 5L);

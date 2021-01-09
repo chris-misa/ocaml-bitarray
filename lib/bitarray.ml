@@ -3,13 +3,15 @@ open Ctypes
 module C = Bitarray_bindings.C(Bitarray_generated)
 
 type t = C.bit_array Ctypes.structure
-type hack
+(*type hack*)
 
 let _create size =
     C.bit_array_create (Unsigned.UInt64.of_int64 size)
 
+(*
 let free ba =
     C.bit_array_free ba
+*)
 
 let create size =
     let ba = make ~finalise:(fun p ->
@@ -87,10 +89,11 @@ let find_prev_clear_bit = find_bit_offset C.bit_array_find_prev_clear_bit
 let sort_bits ba = C.bit_array_sort_bits (addr ba)
 let sort_bits_rev ba = C.bit_array_sort_bits_rev (addr ba)
 
-let of_string str =
+(*let of_string str =
     let ba = create 0L in
     C.bit_array_from_str (addr ba) str;
     ba
+*)
 
 let clone ba =
     let ba_ptr = C.bit_array_clone (addr ba) in
@@ -131,5 +134,5 @@ let reverse_region ba start len =
     C.bit_array_reverse_region (addr ba) (Unsigned.UInt64.of_int64 start) (Unsigned.UInt64.of_int64 len)
 
 let random ba prob = C.bit_array_random (addr ba) prob
-let shuffle ba = C.bit_array_shuffle (addr ba)
-let next_permutation ba = C.bit_array_next_permutation (addr ba)
+(* let shuffle ba = C.bit_array_shuffle (addr ba) *)
+(* let next_permutation ba = C.bit_array_next_permutation (addr ba) *)

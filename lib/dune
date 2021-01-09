@@ -1,0 +1,20 @@
+(library
+ (foreign_stubs
+  (language c)
+  (names bit_array bitarray_stubs))
+ (public_name bitarray)
+ (libraries ctypes))
+
+(rule
+ (targets bitarray_stubs.c bitarray_generated.ml)
+ (deps
+  (:< ../lib_gen/bitarray_bindgen.exe))
+ (action
+  (run %{<})))
+
+(rule
+ (targets bitarray_bindings.ml)
+ (deps
+  (:< ../lib_gen/bitarray_bindings.ml))
+ (action
+  (copy %{<} %{targets})))

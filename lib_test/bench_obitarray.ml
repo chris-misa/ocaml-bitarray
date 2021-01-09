@@ -1,5 +1,7 @@
-open Core.Std
-open Core_bench.Std
+(* open Core.Std *)
+(* open Core_bench.Std *)
+open Core
+open Core_bench
 
 let main () =
     let ba_1mm = Bitarray.create 1_000_000L in
